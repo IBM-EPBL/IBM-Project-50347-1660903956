@@ -1,56 +1,84 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Image Classification</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<div class="container">
-  <h1 class="jumbotron bg-primary">Image Classfication</h1>
-  <br><br>
-  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
-      <div class="col-sm-10">          
-        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Detection Of Parkinson's Disease  </title>
+    <link rel="stylesheet" href="C:/Users/Administrator/Downloads/IBM FINAL/templates/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url("C:/Users/Administrator/Downloads/IBM FINAL/templates/image.jpg");
+        background-color: #cccccc;
+       }
+      </style>
+    <header>
+      <a href="#" class="brand"></a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="templates/index.html">Home</a>
+          <a href="templates/info.html">Info</a>
+          <a href="templates/predict.html">Predict</a>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
+    <section class="home">
+      <div class="content active">
+        <h1>Parkinson's<br><span>Disease</span></h1>
+        <p>More than 10 million people are living with Parkinson’s Disease worldwide, according to the Parkinson’s Foundation. While Parkinson’s cannot be cured, early detection along with proper medication can significantly improve symptoms and quality of life.The researchers found that the drawing speed was slower and the pen pressure is lower among Parkinson’s patients. One of the indications of Parkinson’s is tremors and rigidity in the muscles, making it difficult to draw smooth spirals and waves. It is possible to detect Parkinson’s disease using the drawings alone instead of measuring the speed and pressure of the pen on paper.</p>
       </div>
-    </div>
-  </form>
+      <div class="media-icons">
+      </div>
+    </section>
 
-	{% if prediction %}
-  <img src="{{img_path}}" height="400px" width="400px">
-	<h2> Your Prediction   : <i> {{prediction_text}} </i></h2>
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
 
-	{% endif %}
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
 
-</div>
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
 
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
 
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
 
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
 
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
 
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
 
-
-</body>
+  </body>
 </html>
 
 
-
-
-
-
-
-
+      
