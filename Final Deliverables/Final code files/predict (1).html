@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Predict Detection Of Parkinson's Disease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"> 
+    <style>
+    .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+      
+      .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #4CAF50;
+      }
+      
+      .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .button2 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #008CBA;
+      }
+      
+      .button2:hover {
+        background-color: #008CBA;
+        color: white;
+      }
+      .image-section{
+	float:none;
+	width:100%;
+	
+}
+.image-section img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin:auto;
+}
+      
+      </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand"></a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="index.html">Home</a>
+          <a href="info.html">Info</a>
+          <a href="predict.html">Predict</a>
+        </div>
+      </div>
+    </header>
+
+        <div class="content active">
+        <div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+                    <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg">
+                    <div id="display-image"></div>
+                    <script src="script.js"></script>	
+<button class="button button2" onclick="myFunction()">Predict</button>
+<p id="demo"></p>
+<div class="image-section">
+  <img src="park.webp">
+</div>
+			</div>
+      
+		</div>
+	</div>
+ 
+  <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "This Person has Parkinsons";
+    }
+    </script>
+  </body>
+</html>
+      
